@@ -92,7 +92,7 @@ angular.module('myApp', [
 		
 		$scope.updateServo(0) //Servo quay về góc 0 độ!. Dùng cách 2 
 	})
-$scope.upt5  = function(){
+      $scope.upt5  = function(){
 	var ip = document.getElementById('ip').value;
 		mySocket.emit("LED1ON"+ip)
     
@@ -132,7 +132,21 @@ $scope.upt5  = function(){
 		$scope.buttons = json.data
 	})
 	
-		
+	$scope.updt  = function(){
+	 var buyerData = {
+		labels : ["monday","Tuesday","wednesday","thursday","friday","satuday","sunday"],
+		datasets : [
+		{
+				fillColor : "rgba(172,194,132,0.4)",
+				strokeColor : "#ACC26D",
+				pointColor : "#fff",
+				pointStrokeColor : "#9DB86D",
+				data : [203,156,99,251,305,247,200]
+				
+			}
+		]
+	}
+	}	
 	
 		
 });
