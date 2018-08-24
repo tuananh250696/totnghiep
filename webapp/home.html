@@ -99,18 +99,7 @@
 				</div>
 			</div>
 			
-				<!-- Cục thay đổi trạng thái LED -->
-			<div class="list-group-item list-group-item-home">
-				<div>
-			     <i class="fa fa-tachometer feature-icon  text-primary"></i>
-				</div>
-				<div>		
-			var buyers = document.getElementById('buyers').getContext('2d');
-	               // draw line chart
-                  	new Chart(buyers).Line(buyerData);		
-				</div>
-				</div>	
-			
+				
 			<!-- Cục thay đổi trạng thái LED -->
 			<div class="list-group-item list-group-item-home">
 				<div>
@@ -161,8 +150,31 @@
 				
 				</div>
 			</div>	
+				  
+				  
+			<body>
+   
+      <!-- line chart canvas element -->
+        <canvas id="buyers" width="600" height="400"></canvas>
+        <!-- pie chart canvas element -->
+        <canvas id="countries" width="600" height="400"></canvas>
+        <!-- bar chart canvas element -->
+        <canvas id="income" width="600" height="400"></canvas>
+    
+        <div class="footer-bar">
+          <span class="article-wrapper">
+        <span class="article-label">Xem Bài Viết: </span>
+              <span class="article-link"><a href="https://www.thuthuatweb.net/javacript/de-dang-tao-bieu-do-tren-web-voi-chart-js.html">Dễ dàng tạo biểu đồ trên web với Chart.js</a></span>
+          </span>
+    
+          </div>	  
+				   <div>		
+			var buyers = document.getElementById('buyers').getContext('2d');
+	               // draw line chart
+                  	new Chart(buyers).Line(buyerData);		
+				</div>
 
-	<footer><center>Copyright &copy;NGUYEN TUAN ANH&&TRAN KHA CUONG</div></center>
+	<footer><center>Copyright &copy;NGUYEN TUAN ANH</div></center>
 		</div>
 	</div>
 </div>
