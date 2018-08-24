@@ -132,21 +132,7 @@ angular.module('myApp', [
 		$scope.buttons = json.data
 	})
 	
-	$scope.updt  = function(){
-	 var buyerData = {
-		labels : ["monday","Tuesday","wednesday","thursday","friday","satuday","sunday"],
-		datasets : [
-		{
-				fillColor : "rgba(172,194,132,0.4)",
-				strokeColor : "#ACC26D",
-				pointColor : "#fff",
-				pointStrokeColor : "#9DB86D",
-				data : [203,156,99,251,305,247,200]
-				
-			}
-		]
-	}
-	}	
+	
 	
 		
 });
