@@ -31,7 +31,16 @@
 	    
     </style>
 
-
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+         <script src="Chart.min.js"></script>
+   
+<!-- line chart canvas element -->
+        <canvas id="buyers" width="600" height="400"></canvas>
+        <!-- pie chart canvas element -->
+        <canvas id="countries" width="600" height="400"></canvas>
+        <!-- bar chart canvas element -->
+        <canvas id="income" width="600" height="400"></canvas>
 
 
    
@@ -163,35 +172,19 @@
           
 		
 		
-		<!DOCTYPE html>
-<html>
-<head>
-<title>Dễ dàng tạo biểu đồ trên web với Chart.js</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel="stylesheet" type="text/css" href="demo.css" media="all" />
-    <script src="Chart.min.js"></script>
-    <link rel="icon" href="http://www.thuthuatweb.net/wp-content/themes/HostingSite/favicon.ico" type="image/x-ico"/>
-</head>
-<body>
-   
-<!-- line chart canvas element -->
-        <canvas id="buyers" width="600" height="400"></canvas>
-        <!-- pie chart canvas element -->
-        <canvas id="countries" width="600" height="400"></canvas>
-        <!-- bar chart canvas element -->
-        <canvas id="income" width="600" height="400"></canvas>
+		
+	
     
-<div class="footer-bar">
-    <span class="article-wrapper">
-        <span class="article-label">Xem Bài Viết: </span>
-        <span class="article-link"><a href="https://www.thuthuatweb.net/javacript/de-dang-tao-bieu-do-tren-web-voi-chart-js.html">Dễ dàng tạo biểu đồ trên web với Chart.js</a></span>
-    </span>
     
-</div>
-    
-<script>
 
+				  
+				  
+				  
+	<div class="list-group-item list-group-item-home">
+				<div>
+					<i class="fa fa-gamepad feature-icon text-primary"></i>
+				</div>			  
+        <div>	
 	// line chart data
 	var buyerData = {
 		labels : ["monday","Tuesday","wednesday","thursday","friday","satuday","sunday"],
@@ -267,16 +260,9 @@
 	
 	// draw bar chart
 	new Chart(income).Bar(barData);
-
-</script>
-    
-</body>
-</html>
-
-		
-		
-		
-		
+	
+		</div>			  
+				  
 	<footer><center>Copyright &copy;NGUYEN TUAN ANH</div></center>
 		</div>
 	</div>
