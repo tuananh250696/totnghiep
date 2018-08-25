@@ -31,6 +31,103 @@
 	    
     </style>
 
+
+
+html,body{
+  height:100%;
+}
+body{
+  text-align:center;
+}
+body:before{
+  content:'';
+  height:100%;
+  display:inline-block;
+  vertical-align:middle;
+}
+button{
+  background:#1AAB8A;
+  color:#fff;
+  border:none;
+  position:relative;
+  height:60px;
+  font-size:1.6em;
+  padding:0 2em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
+}
+button:hover{
+  background:#fff;
+  color:#1AAB8A;
+}
+button:before,button:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: #1AAB8A;
+  transition:400ms ease all;
+}
+button:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+button:hover:before,button:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}
+
+
+
+/*Thats all. I hope you enjoyed it.
+Thanks :)*/
+/***************************************************************/
+/*************** Footer Bar Style ******************************/
+/***************************************************************/
+.footer-bar
+{
+    display: block;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    background: #111;
+    border-top: 1px solid #E62600;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+.footer-bar .article-wrapper{
+    font-family: arial, sans-serif;
+    font-size: 14px;
+    color: #888;
+    float: left;
+    margin-left: 10%;
+}
+.footer-bar .article-link a, .footer-bar .article-link a:visited{
+    text-decoration: none;
+    color: #fff;
+}
+.site-link a, .site-link a:visited{
+    color: #888;
+    font-size: 14px;
+    font-family: arial, sans-serif;
+    float: right;
+    margin-right: 10%;
+    text-decoration: none;
+}
+.site-link a:hover{
+    color: #E62600;
+}
+
+
+
+
+
    
        <body>
 	<center>
@@ -156,84 +253,15 @@
 					<i class="fa fa-tachometer feature-icon  text-primary"></i>
 				</div>
 				<div>			  
-	<script>
-	// line chart data
-	var buyerData = {
-		labels : ["monday","Tuesday","wednesday","thursday","friday","satuday","sunday"],
-		datasets : [
-		{
-				fillColor : "rgba(172,194,132,0.4)",
-				strokeColor : "#ACC26D",
-				pointColor : "#fff",
-				pointStrokeColor : "#9DB86D",
-				data : [203,156,99,251,305,247,200]
-				
-			}
-		]
-	}
 	
-	// get line chart canvas
-	var buyers = document.getElementById('buyers').getContext('2d');
-
-	// draw line chart
-	new Chart(buyers).Line(buyerData);
-	
-	// pie chart data
-	var pieData = [
-		{
-			value: 20,
-			color:"#878BB6"
-		},
-		{
-			value : 40,
-			color : "#4ACAB4"
-		},
-		{
-			value : 10,
-			color : "#FF8153"
-		},
-		{
-			value : 30,
-			color : "#FFEA88"
-		}
-	];
-
-	// pie chart options
-	var pieOptions = {
-		segmentShowStroke : false,
-		animateScale : true
-	}
-	
-	// get pie chart canvas
-	var countries= document.getElementById("countries").getContext("2d");
-	
-	// draw pie chart
-	new Chart(countries).Pie(pieData, pieOptions);
-	
-	// bar chart data
-	var barData = {
-	labels : ["monday","Tuesday","wednesday","thursday","friday","satuday","sunday"],
-	datasets : [
-		{
-			fillColor : "#48A497",
-			strokeColor : "#48A4D1",
-			data : [456,479,324,569,702,600]
-		},
-		{
-			fillColor : "rgba(73,188,170,0.4)",
-			strokeColor : "rgba(72,174,209,0.4)",
-			data : [364,504,605,400,345,320]
-		}
-		]
-	}
-	
-	// get bar chart canvas
-	var income = document.getElementById("income").getContext("2d");
-	
-	// draw bar chart
-	new Chart(income).Bar(barData);
-
-</script>
+    
+					
+					
+	<canvas id="buyers" width="600" height="400"></canvas>
+        <!-- pie chart canvas element -->
+        <canvas id="countries" width="600" height="400"></canvas>
+        <!-- bar chart canvas element -->
+        <canvas id="income" width="600" height="400"></canvas>
     
 </body>
 
