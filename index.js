@@ -74,25 +74,6 @@ webapp_nsp.on('connection', function(socket) {
 		esp8266_nsp.emit(eventName, eventJson) //gửi toàn bộ lệnh + json đến esp8266
 	});
 })
-	// line chart data
-	var buyerData = {
-		labels : ["monday","Tuesday","wednesday","thursday","friday","satuday","sunday"],
-		datasets : [
-		{
-				fillColor : "rgba(172,194,132,0.4)",
-				strokeColor : "#ACC26D",
-				pointColor : "#fff",
-				pointStrokeColor : "#9DB86D",
-				data : [203,156,99,251,305,247,200]
-				
-			}
-		]
-	}
 	
-	// get line chart canvas
-	var buyers = document.getElementById('buyers').getContext('2d');
-
-	// draw line chart
-	new Chart(buyers).Line(buyerData);
 	
 console.log("ok")
