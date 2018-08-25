@@ -1,175 +1,110 @@
-
-<style type="text/css">
-        body{
-            margin:0px;
-        }
-      #container{
-           
-            border:2px solid red;
-               margin-left:auto;
-            margin-right:auto;
-                }
-        #header{
-            background-color:green;
-            color:white;
-	}
-        .title1{
-            font-size:30px;
-            text-align:center;
-            padding-top:15px;
-        }
-     .button2 {
-     background-color: white;
-     color: green;border: 2px solid #008CBA; border-radius: 10px;
-	 }
-     .button2:hover {		     
-      background-color: #008CBA;color: green;
-     }
-       .button3 {background-color: white; color: black; border: 2px solid #f44336; border-radius: 10px;} 
-	.button3:hover {background-color: #f44336;color: white;}    
-	     
-	    
-    </style>
-
-
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dễ dàng tạo biểu đồ trên web với Chart.js</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="demo.css" media="all" />
+    <script src="Chart.min.js"></script>
+    <link rel="icon" href="http://www.thuthuatweb.net/wp-content/themes/HostingSite/favicon.ico" type="image/x-ico"/>
+</head>
+<body>
    
-       <body>
-	<center>
-        <div class="scrollable">
-	<div class="scrollable-content ">
-		<div class="list-group text-center">
-			<!-- cục giới thiệu -->
-		
-                 <div id="container">
-                           <div id="header">
-                           <div class="title1">SOCKET WEB</div>
-				<img src=http://vtv1.vcmedia.vn/k:2015/untitled-1-1431324468444/toi-thay-hoa-vang-tren-co-xanh-tung-trailer-chinh-thuc.jpg width=1400px height=250px>
-				<h1>Socket Client Webapp <small>1.0</small>
-			 </div
-					
-		   </body>	
-	  
-       
-
-     
-			
-			<!-- Cục cảm biến mưa -->
-			<div class="list-group-item list-group-item-home">
-				<div>
-					<i class="fa fa-gamepad feature-icon text-primary"></i>
-				</div>
-				<div>
-					<h3 class="home-heading">Cảm biến mưa</h3>
-					Kết quả: {{CamBienMua}}
-				</div>
-			</div>
-			
-			<!-- Cục cập nhập giá trị cảm biến -->
-			<div class="list-group-item list-group-item-home">
-				<div>
-					<i class="fa fa-tachometer feature-icon  text-primary"></i>
-				</div>
-				<div>
-					<h3 class="home-heading">Cập nhập cảm biến</h3>
-					<button class="button" ng-click="updateSensor()">
-						Nhấn vô dể cập nhập giá trị cảm biến
-					</button>
-				</div>
-			</div>
-			
-			<!-- Cục cập nhập giá trị servo -->
-			<div class="list-group-item list-group-item-home">
-				<div>
-					<i class="fa fa-tachometer feature-icon  text-primary"></i>
-				</div>
-				<div>
-					<h3 class="home-heading">Cập nhập giá trị servo</h3>
-					<input type="text" class="input text" ng-model="servoPosition" ng-change="updateServo(servoPosition)" />
-				</div>
-			</div>
-			
-			<!-- Cục thay đổi chữ trên LCD-->
-			<div class="list-group-item list-group-item-home">
-				<div>
-					<i class="fa fa-tachometer feature-icon  text-primary"></i>
-				</div>
-				<div>
-					<h3 class="home-heading">Cập nhập giá trị LCD </h3>
-					<input type="text" class="input text" ng-model="lcd[0]" ng-change="updateLCD()" />
-					<input type="text" class="input text" ng-model="lcd[1]" ng-change="updateLCD()" />
-				</div>
-			</div>
-			
-				
-			<!-- Cục thay đổi trạng thái LED -->
-			<div class="list-group-item list-group-item-home">
-				<div>
-					<i class="fa fa-tachometer feature-icon  text-primary"></i>
-				</div>
-				<div>
-					<h3 class="home-heading">TRẠNG THÁI ĐÈN LED</h3>
-					<div ng-repeat="led_value in leds_status  track by $index">
-						Đèn LED thứ {{$index}} đang {{led_value ? "Bật" : "Tắt"}}. <input type="checkbox" ng-true-value="1" ng-false-value="0" ng-change="changeLED()" ng-model="leds_status[$index]" />
-					</div>
-				</div>
-			</div>
-			
-			<!-- Cục cập nhập giá trị nút nhấn! -->
-			<div class="list-group-item list-group-item-home">
-				<div>
-					<i class="fa fa-tachometer feature-icon  text-primary"></i>
-				</div>
-				<div>
-					<h3 class="home-heading">TRẠNG THÁI mấy cái NÚT NHẤN</h3>
-					<div ng-repeat="button_value in buttons  track by $index">
-						Nút nhấn {{$index}} đang {{button_value ? "THẢ" : "GIỮ"}}
-		              </div>
-                   </div>
-	  </div>
-	<div>		
-<!-- Cục cập nhập led-->
-			<div class="list-group-item list-group-item-home">
-				<div>
-					<i class="fa fa-tachometer feature-icon  text-primary"></i>
-				</div>
-				<div>
-				<h3 class="home-heading">cổng</h3>
-				          <input type="text" id="ip" class="ip" placeholder="ip theo code adruino"></input><br>
-					<button class="button button2" ng-click="upt5()">ON D5</button>
-					<button class="button button3" ng-click="upt51()">Off D5</button>
-					 <br>
-					<button class="button button2" ng-click="upt6()">ON D6</button>
-					<button class="button button3" ng-click="upt61()">Off D6</button>
-					 <br>
-					<button class="button button2" ng-click="upt7()">ON D7</button>
-					<button class="button button3" ng-click="upt71()">Off D7</button>
-				         <br>
-					<button class="button button2" ng-click="upt8()">ON D8</button>
-					<button class="button button3" ng-click="upt81()">Off D8</button>
-					 <br>
-				</div>
-				
-				</div>
-			</div>	
-				  
-	                  <div class="list-group-item list-group-item-home">
-				<div>
-					<i class="fa fa-tachometer feature-icon  text-primary"></i>
-				</div>
-				<div>			  
-                               </div>
-          
-		
-		
-	
-				  
-	<footer><center>Copyright &copy;NGUYEN TUAN ANH</div></center>
-		</div>
-	</div>
+<!-- line chart canvas element -->
+        <canvas id="buyers" width="600" height="400"></canvas>
+        <!-- pie chart canvas element -->
+        <canvas id="countries" width="600" height="400"></canvas>
+        <!-- bar chart canvas element -->
+        <canvas id="income" width="600" height="400"></canvas>
+    
+<div class="footer-bar">
+    <span class="article-wrapper">
+        <span class="article-label">Xem Bài Viết: </span>
+        <span class="article-link"><a href="https://www.thuthuatweb.net/javacript/de-dang-tao-bieu-do-tren-web-voi-chart-js.html">Dễ dàng tạo biểu đồ trên web với Chart.js</a></span>
+    </span>
+    
 </div>
     
-    
+<script>
 
-
-
+	// line chart data
+	var buyerData = {
+		labels : ["monday","Tuesday","wednesday","thursday","friday","satuday","sunday"],
+		datasets : [
+		{
+				fillColor : "rgba(172,194,132,0.4)",
+				strokeColor : "#ACC26D",
+				pointColor : "#fff",
+				pointStrokeColor : "#9DB86D",
+				data : [203,156,99,251,305,247,200]
+				
+			}
+		]
+	}
 	
+	// get line chart canvas
+	var buyers = document.getElementById('buyers').getContext('2d');
+
+	// draw line chart
+	new Chart(buyers).Line(buyerData);
+	
+	// pie chart data
+	var pieData = [
+		{
+			value: 20,
+			color:"#878BB6"
+		},
+		{
+			value : 40,
+			color : "#4ACAB4"
+		},
+		{
+			value : 10,
+			color : "#FF8153"
+		},
+		{
+			value : 30,
+			color : "#FFEA88"
+		}
+	];
+
+	// pie chart options
+	var pieOptions = {
+		segmentShowStroke : false,
+		animateScale : true
+	}
+	
+	// get pie chart canvas
+	var countries= document.getElementById("countries").getContext("2d");
+	
+	// draw pie chart
+	new Chart(countries).Pie(pieData, pieOptions);
+	
+	// bar chart data
+	var barData = {
+	labels : ["monday","Tuesday","wednesday","thursday","friday","satuday","sunday"],
+	datasets : [
+		{
+			fillColor : "#48A497",
+			strokeColor : "#48A4D1",
+			data : [456,479,324,569,702,600]
+		},
+		{
+			fillColor : "rgba(73,188,170,0.4)",
+			strokeColor : "rgba(72,174,209,0.4)",
+			data : [364,504,605,400,345,320]
+		}
+		]
+	}
+	
+	// get bar chart canvas
+	var income = document.getElementById("income").getContext("2d");
+	
+	// draw bar chart
+	new Chart(income).Bar(barData);
+
+</script>
+    
+</body>
+</html>
+
